@@ -1,0 +1,1 @@
+// It is the mixture of all types of inheritance

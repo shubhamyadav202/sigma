@@ -1,0 +1,77 @@
+* {
+  background-color: black;
+}
+.container {
+  font-family: Arial;
+  height: 300px;
+  display: flex;
+  background-color: black;
+}
+
+.image-box {
+  width: 500px;
+  height: 280px;
+  margin: 10px 10px 10px 10px;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://i.ytimg.com/vi/tVzUXW6siu0/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCgs3kt08JL2BJuEcjc4IMPB9i9NA");
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.caption {
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 20px;
+  display: flex;
+  color: white;
+  height: 52px;
+  justify-content: center;
+}
+
+.nvt-info {
+  color: #aaaaaa;
+  display: flex;
+}
+
+.channel-name {
+  margin-right: 10px;
+  margin-left: 4px;
+}
+.views {
+  margin-right: 10px;
+}
+.time {
+  margin-right: 10px;
+}
+
+.channel-logo {
+  height: 24px;
+  width: 24px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.c-logo {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-image: url("https://yt3.ggpht.com/ytc/AIdro_kX3sdbuu3KFmRPsmlu0R5Rx_BhpxwupjtvJmkEdNfla7w=s88-c-k-c0x00ffffff-no-rj");
+  background-size: cover;
+}
+
+.capsule {
+  height: 19px;
+  width: 45px;
+  color: #ffffff;
+  position: relative;
+  bottom: 22px;
+  left: 449px;
+  background-color: #332625cc;
+  /* z-index: 10; */
+  border-radius: 5px;
+  padding-left: 3px;
+}
