@@ -2,12 +2,14 @@
 #include<vector>
 using namespace std;
 
+// Node class for Binary Tree
 class Node{
-    public :
-    int data;
-    Node *left;
-    Node *right;
+public:
+    int data;      // Stores node value
+    Node *left;    // Pointer to left child
+    Node *right;   // Pointer to right child
 
+    // Constructor to initialize a node
     Node(int data)
     {
         this->data = data;
@@ -15,29 +17,57 @@ class Node{
     }
 };
 
+// Global index used to traverse the vector
 static int index = -1;
 
-Node *buildTree(vector<int> nodes) // O(n)
-{
-    index++; 
+/*
+    Function to build a Binary Tree from preorder traversal.
 
+    Representation:
+    - Each integer represents a node value.
+    - -1 represents a NULL node.
+
+    Example:
+    {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1}
+
+    Time Complexity: O(n)
+    Space Complexity: O(h)  // h = height of tree (recursion stack)
+*/
+Node *buildTree(vector<int> nodes)
+{
+    // Move to next element in the vector
+    index++;
+
+    // If current value is -1, no node exists here
     if(nodes[index] == -1)
     {
         return NULL;
     }
-    
-    Node *currNode = new Node(nodes[index]); // creating node
-    currNode->left = buildTree(nodes); // left subtree
-    currNode->right = buildTree(nodes);// right subtree
 
+    // Create a new node with current value
+    Node *currNode = new Node(nodes[index]);
+
+    // Recursively build the left subtree
+    currNode->left = buildTree(nodes);
+
+    // Recursively build the right subtree
+    currNode->right = buildTree(nodes);
+
+    // Return the root of the constructed subtree
     return currNode;
 }
 
 int main()
 {
-    vector<int> nodes = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+    // Preorder representation of binary tree
+    // -1 indicates NULL
+    vector<int> nodes = {1,2, 4, -1, -1, 5, -1, -1,3, -1, 6, -1, -1};
+
+    // Build the binary tree
     Node *root = buildTree(nodes);
 
-    cout<<"root = "<<root->data<<endl;
+    // Print root node value
+    cout << "root = " << root->data << endl;
+
     return 0;
 }
