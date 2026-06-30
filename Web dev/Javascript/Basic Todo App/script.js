@@ -16,7 +16,8 @@ btn1.addEventListener("click", function () {
 });
 
 ul.addEventListener("click", function (event) {
-//   console.log(event.target.nodeName);
+  // console.log(event.target.nodeName);
+  console.log(event);
   if (event.target.nodeName == "BUTTON") {
     let listItem = event.target.parentElement;
     listItem.remove();

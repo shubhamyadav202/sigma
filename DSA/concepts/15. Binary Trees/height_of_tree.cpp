@@ -57,21 +57,35 @@ Node *buildTree(vector<int> nodes)
     return currNode;
 }
 
+int height(Node *root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        int leftHeight = height(root->left);
+        int rightHeight = height(root->right);
+    
+        int currHeight = max(leftHeight,rightHeight) + 1;
+    
+        return currHeight;
+    }
+}
+
 int main()
 {
     // Preorder representation of binary tree
     // -1 indicates NULL
     vector<int> nodes = {1,2, 4, -1, -1, 5, -1, -1,3, -1, 6, -1, -1};
 
+
     // Build the binary tree
     Node *root = buildTree(nodes);
 
-    // Node *root2 = new Node(5);
-    // root2->left = new Node(4);
-    // root2->right = new Node(3);
+    cout<<"Height of tree : "<<height(root);
 
-    // Print root node value
-    cout << "root = " << root->data << endl;
 
     return 0;
 }

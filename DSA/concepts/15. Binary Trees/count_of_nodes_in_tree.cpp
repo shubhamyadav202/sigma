@@ -57,6 +57,21 @@ Node *buildTree(vector<int> nodes)
     return currNode;
 }
 
+int count(Node *root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        int leftCount = count(root->left);
+        int rightCount = count(root->right);
+
+        return leftCount + rightCount + 1;
+    }
+}
+
 int main()
 {
     // Preorder representation of binary tree
@@ -66,12 +81,7 @@ int main()
     // Build the binary tree
     Node *root = buildTree(nodes);
 
-    // Node *root2 = new Node(5);
-    // root2->left = new Node(4);
-    // root2->right = new Node(3);
-
-    // Print root node value
-    cout << "root = " << root->data << endl;
+    cout<<"Count of Nodes : "<<count(root)<<endl;
 
     return 0;
 }
